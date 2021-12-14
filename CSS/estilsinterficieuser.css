@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400&display=swap');
+
+.back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../IMATGES/Biblioteca.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 6em;
+    letter-spacing: 1px;
+    transition: 1s;
+    color: rgb(0, 0, 0);
+}
+
+h1:hover {
+    letter-spacing: 20px;
+}
+
+h1#white {
+    color: white;
+}
+
+div.titol {
+    position: relative;
+    text-align: center;
+    margin-top: 110px;
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    transition-duration: 2s;
+}
+
+div.titolp {
+    position: relative;
+    text-align: center;
+    margin-top: 110px;
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    transition-duration: 2s;
+    background: url('../IMATGES/titolproductes.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.titolpbasketball {
+    position: relative;
+    text-align: center;
+    margin-top: 110px;
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    transition-duration: 2s;
+    background: url('../IMATGES/titolbasketball.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.titolpfootball {
+    position: relative;
+    text-align: center;
+    margin-top: 110px;
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    transition-duration: 2s;
+    background: url('../IMATGES/titolfootball.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.titolpaltres {
+    position: relative;
+    text-align: center;
+    margin-top: 110px;
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    transition-duration: 2s;
+    background: url('../IMATGES/titolaltres.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.menuproductes {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 250px;
+    transition-duration: 2s;
+    background-color: white;
+}
+
+div.menuproductes1 {
+    position: relative;
+    text-align: center;
+    object-fit: cover;
+    float: left;
+    width: 33.33333333333333333%;
+    height: 100%;
+    transition-duration: 2s;
+    background: url('../IMATGES/menuproductes1.jpg') no-repeat top center #efeff134;
+    background-size: cover;
+}
+
+div.menuproductes2 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 33.33333333333333333%;
+    height: 100%;
+    transition-duration: 2s;
+    background: url('../IMATGES/menuproductes2.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.menuproductes3 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 33.33333333333333333%;
+    height: 100%;
+    transition-duration: 2s;
+    background: url('../IMATGES/menuproductes3.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+
+nav a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 35px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    transition-duration: 1.5s;
+}
+
+nav a.menu {
+    color: black;
+}
+
+nav a.menu:hover {
+    transition-duration: 1s;
+    letter-spacing: 3px;
+    transform: scale(1.1);
+}
+
+div.usuaricuadre {
+    position: fixed;
+    text-align: center;
+    width: 25%;
+    height: 140px;
+    top: 35;
+    right: 75%;
+    padding-top: 5px;
+    background: white;
+    transition-duration: 2s;
+}
+
+div.usuaricuadrecomandes {
+    position: fixed;
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    top: 92%;
+    right: 0%;
+    padding-top: 5px;
+    background: white;
+    transition-duration: 1s;
+}
+
+div.usuaricuadrecomandes:hover {
+    top: 20%;
+}
+
+input[type=submit] {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875em;
+    width: 80%;
+    padding: 5px;
+    border: 0.4px solid black;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    background: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=submit]:hover {
+    background: white;
+    color: black;
+}
+
+p#white {
+    font-size: 2em;
+    color: white;
+}
+
+p.pinicisessio {
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    transition: 1s;
+    color: rgb(0, 0, 0);
+}
+
+#noV {
+    display: none;
+}
+
+.botoproser {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875em;
+    width: 50%;
+    padding: 5px;
+    border: 0.4px solid black;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 6px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+}
+
+.botoproser:hover {
+    background-color: #ffffff;
+    color: black;
+    transition-duration: 1s;
+}
+
+div.indexdiv1 {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+div.indexdiv1_1 {
+    position: relative;
+    text-align: center;
+    object-fit: cover;
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: url('../IMATGES/productes1.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.indexdiv1_2 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: url('../IMATGES/productes2.jpg') no-repeat top center #efeff1;
+    background-size: cover;
+}
+
+div.indexdiv1_3 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 350px;
+}
+
+div.indexdiv2_1 {
+    position: absolute;
+    text-align: center;
+    object-fit: cover;
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+div.indexdiv2_2 {
+    position: absolute;
+    text-align: center;
+    float: left;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+div.indexdiv3 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.609);
+}
+
+div.indexdiv3_1 {
+    position: relative;
+    text-align: center;
+    object-fit: cover;
+    float: left;
+    width: 33.333333333333333333%;
+    height: 100%;
+}
+
+div.indexdiv3_2 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 33.333333333333333333%;
+    height: 100%;
+}
+
+div.indexdiv3_3 {
+    position: relative;
+    text-align: center;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 33.333333333333333333%;
+    height: 100%;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 50%;
+    font-size: 3.5em;
+    letter-spacing: 1px;
+    transition-duration: 0.4s;
+    color: rgb(255, 255, 255);
+}
+
+a.h3 {
+    text-decoration: none;
+}
+
+h3:hover {
+    letter-spacing: 8px;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 20px;
+    font-size: 3.5em;
+    letter-spacing: 1px;
+    transition-duration: 0.4s;
+    color: rgb(255, 255, 255);
+}
+
+a.h4 {
+    text-decoration: none;
+}
+
+h4:hover {
+    letter-spacing: 8px;
+}
+
+div.indexdivproductes {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 1px;
+    transition-duration: 0.4s;
+    color: rgb(255, 255, 255);
+}
+
+a.h2 {
+    text-decoration: none;
+}
+
+h2:hover {
+    letter-spacing: 8px;
+}
+
+p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+    margin-top: -45px;
+    letter-spacing: 1px;
+    transition: 1s;
+    color: white;
+}
+
+h6 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-top: -60px;
+    letter-spacing: 1px;
+    transition: 1s;
+    color: white;
+}
+
+a.tipusproducte {
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1s;
+    color: white;
+}
+
+a.tipusproducte:hover {
+    text-decoration: none;
+    color: rgb(255, 113, 220);
+}
+
+input.comanda {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    width: 30%;
+    padding: 20px;
+    border: 0.4px solid black;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    background: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input.comanda:hover {
+    background: white;
+    color: black;
+}
+
+#llista {
+    font-size: 0.7em;
+}
+
+input#comprarya {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    width: 20%;
+    padding: 10px;
+    border: 0.4px solid black;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    background: none;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+input#comprarya:hover {
+    background: black;
+    color: white;
+}
