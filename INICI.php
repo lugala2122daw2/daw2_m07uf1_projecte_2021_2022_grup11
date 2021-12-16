@@ -33,6 +33,12 @@
                         <p class="pinici">BIBLIOTECARI</p>
                     </a>
                 </div>
+                <div class="cuadreinici_4">
+                    <a href="INICICAP.html">
+                        <img src="IMATGES/cap.png" href="INICIBIBLIOTECARI.html">
+                        <p class="pinici">CAP</p>
+                    </a>
+                </div>
             </div>
         </div>
     </body>
