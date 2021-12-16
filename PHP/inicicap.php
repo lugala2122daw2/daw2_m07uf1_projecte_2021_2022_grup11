@@ -1,5 +1,5 @@
 <?php
-	$fitxer_usuaris="/var/www/html/Projecte/PHP/usuarisadmin";
+	$fitxer_usuaris="/var/www/html/Projecte/PHP/usuariscap";
 	$fp=fopen($fitxer_usuaris,"r") or die ("No s'ha pogut validar l'usuari");
 	if ($fp) {
 		$mida_fitxer=filesize($fitxer_usuaris);	
@@ -17,7 +17,7 @@
 	}
 	if (($_POST['usuari'] != $logpwd[0]) && ($_POST['ctsnya'] != $logpwd[1])){
 		header("Status: 301 Moved Permanently");
-		header("Location: ../INICIBIBLIOTECARI.html");
+		header("Location: ../INICIADMIN.html");
 		exit;
 	}
 	$_SESSION['usuario'] = ($_POST['usuari']);

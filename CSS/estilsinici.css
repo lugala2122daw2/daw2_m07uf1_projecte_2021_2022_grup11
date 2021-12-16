@@ -51,7 +51,7 @@ div.cuadreinici_2 {
     position: relative;
     text-align: center;
     float: left;
-    width: 50%;
+    width: 30%;
     height: 70%;
     border-radius: 0px 0px 0px 15px;
 }
@@ -62,7 +62,18 @@ div.cuadreinici_3 {
     float: left;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 30%;
+    height: 70%;
+    border-radius: 0px 0px 15px 0px;
+}
+
+div.cuadreinici_4 {
+    position: relative;
+    text-align: center;
+    float: left;
+    top: 0;
+    left: 0;
+    width: 30%;
     height: 70%;
     border-radius: 0px 0px 15px 0px;
 }

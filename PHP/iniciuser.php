@@ -33,12 +33,13 @@
 			session_start();
 			break;
 		}
-	}
+	
 	if (($_POST['usuari'] != $logpwd[0]) && ($_POST['ctsnya'] != $logpwd[1])){
 		header("Status: 301 Moved Permanently");
 		header("Location: ../INICIUSER.html");
 		exit;
 	}
+}
 
 	$_SESSION['usuario'] = ($_POST['usuari']);
 ?>
