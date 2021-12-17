@@ -8,7 +8,7 @@
    	foreach ($usuaris as $usuari) {
 		$logpwd = explode(":",$usuari);
 
-			/*if (($_POST['nomsess'] == $logpwd[0])){
+			if (($_POST['nomsess'] == $logpwd[0])){
 				$a = $usuari;
 				$nomusu = ($_POST['nomusu']);
 				$contra = ($_POST['contra']);
@@ -21,7 +21,7 @@
 				$b = file_get_contents('usuaris');
 				$c = preg_replace("/$a/", "$texte", $b); 
 				file_put_contents($fitxer_usuaris, $c);
-			}*/
+			}
 
 
 		if (($_POST['usuari'] == $logpwd[0]) && ($_POST['ctsnya'] == $logpwd[1])){
@@ -67,7 +67,7 @@
 		</div>
 		<div class="indexdiv3">
 			<div class="indexdiv3_1">
-				<p id="black" class="pinicisessio">DADES DEL TEU USUARI</p>
+				<p id="white" class="pinicisessio">DADES DEL TEU USUARI</p>
 				<?php
 					foreach ($usuaris as $usuari) {
 						$dadesusuari = explode(":",$usuari);
@@ -92,7 +92,7 @@
 				?>
 			</div>
 			<div class="indexdiv3_2">
-			<form action="cambiardadesuser.php" method="POST">
+			<form action="" method="POST">
 				<input type="text" id="noV" class="num" name="nomsess" value="<?php echo "".session_name()."";?>">
 				<br><p class="pinicisessio">NOM DE L'USUARI</p>
                 <input type="text" class="num" name="nomusu" value="<?php echo "".$user."";?>"><br>
@@ -110,6 +110,9 @@
 				<input type="text" class="num" name="numvis" value="<?php echo "".$logpwd[6]."";?>"><br>
                 <input type="submit" class="prestec" value="CANVIAR DADES"><br><br><br>
             </form>
+			</div>
+			<div class="indexdiv3_3">
+
 			</div>
 		</div>
 		<div class="usuaricuadre">

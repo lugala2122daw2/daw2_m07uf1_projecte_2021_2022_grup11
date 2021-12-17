@@ -14,7 +14,7 @@
 	<body>
 		<div class="back"></div>
 		<nav>
-			<a href="" class="menu">Pagina Principal</a>
+			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="" class="menu">LLibres</a>
             <a href="usuarisadmin.php" class="menu">Usuaris</a>
             <a href="" class="menu">Prestecs</a>
@@ -23,14 +23,16 @@
 			<h1 id="white">USUARIS</h1>
 		</div>
 		<div class="indexdivproductest">
-            <div class="productes"></div>
-            <div class="productes_1"><a href="" class="h4"><h4>MOSTRAR USUARIS</h4><a></div>
+            <div class="productes1"></div>
+			<div class="productes2"></div>
+            <div class="productes1_1"><a href="usuarisadminmostrar.php" class="h4"><h4>MOSTRAR USUARIS</h4><a></div>
+			<div class="productes1_2"><a href="cambiardadesadmin.php" class="h4"><h4>MODIFICAR USUARIS</h4><a></div>
         </div>
         <div class="indexdivproductest">
             <div class="productes1"></div>
             <div class="productes2"></div>
-            <div class="productes1_1"><a href="" class="h4"><h4>BORRAR<br>USUARIS</h4><a></div>
-            <div class="productes1_2"><a href="" class="h4"><h4>AFEGIR USUARIS</h4><a></div>
+            <div class="productes1_1"><a href="usuarisadminborrar.php" class="h4"><h4>BORRAR<br>USUARIS</h4><a></div>
+            <div class="productes1_2"><a href="usuarisadminafegir.php" class="h4"><h4>AFEGIR USUARIS</h4><a></div>
         </div>
         <div class="usuaricuadre">
         <form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
