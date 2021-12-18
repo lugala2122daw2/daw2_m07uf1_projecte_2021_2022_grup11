@@ -8,16 +8,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
 		<div class="back"></div>
 		<nav>
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="" class="menu">Productes</a>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Comandes</a>
+		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
 			<h1 id="white">USUARIS REGISTRATS</h1>

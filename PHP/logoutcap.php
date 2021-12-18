@@ -25,7 +25,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>

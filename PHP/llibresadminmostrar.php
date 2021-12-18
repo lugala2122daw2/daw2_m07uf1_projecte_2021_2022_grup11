@@ -1,21 +1,14 @@
 <?php
     session_start();
     echo "Nombre de usuario: " . $_SESSION["usuario"];
-    $filename="/var/www/html/Projecte/PHP/usuaris";
-    $fitxer=fopen($filename,"a+") or die ("No s'ha pogut fer el registre");
-    $user = ($_POST['usuari']);
-    $password = ($_POST['ctsnya']);
-    $nomcognoms = ($_POST['nomcognoms']);
-    $codipostal = ($_POST['codipostal']);
-    $email = ($_POST['email']);
-    $numcontacte = ($_POST['numcontacte']);
-    $visa = ($_POST['visa']);
-    $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$visa\n";
-    if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $visa){
-        fwrite($fitxer,$texte);
+    if(($_POST['texto'])){
+        $filename="/var/www/html/Projecte/PHP/prestec";
+        $fitxer=fopen($filename,"a+") or die ("No s'ha pogut fer el registre de la comanda");
+        $textocomanda = ($_POST['texto']);
+        $textocomandaescribir="$textocomanda\n";
+        fwrite($fitxer,$textocomandaescribir);
         fclose($fitxer);
     }
-    
 ?>
 
 <html>
@@ -34,27 +27,36 @@
 		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">AFEGIR USUARIS</h1>
+			<h1 id="white">LLIBRES DISPONIBLES</h1>
         </div>
         <div class="indexdivproductes">
-            <form action="" method="POST">
-            <br><p id="white" class="pinicisessio">NOM DE L'USUARI</p>
-                <input type="text" name="usuari" placeholder=""><br>
-                <p id="white" class="pinicisessio">CONTRASENYA</p>
-                <input type="text" name="ctsnya" placeholder="">
-                <p id="white" class="pinicisessio">NOM I COGNOMS</p>
-                <input type="text" name="nomcognoms" placeholder="">
-                <p id="white" class="pinicisessio">CODI POSTAL</p>
-                <input type="text" name="codipostal" placeholder=""><br>
-                <p id="white" class="pinicisessio">E-MAIL</p>
-                <input type="text" name="email" placeholder=""><br>
-                <p id="white" class="pinicisessio">NUMERO DE CONTACTE</p>
-                <input type="text" name="numcontacte" placeholder=""><br>
-                <p id="white" class="pinicisessio">NUMERO TARGETA VISA</p>
-                <input type="text" name="visa" placeholder=""><br>
-                <br><br><br>
-                <input type="submit" class="comanda" value="AFEGIR"><br><br><br>
-            </form>
+            <?php
+               $fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+               $fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
+               if ($fp) {
+                   $mida_fitxer=filesize($fitxer_llibres);	
+                   $llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
+               }
+            ?>
+            
+            <?php 
+                foreach ($llibre as $llibres){
+                    $dadesllibre = explode(":",$llibres);
+                    $llibreid = $dadesllibre[0];
+                    $llibretitol = $dadesllibre[1];
+                    $isbn = $dadesllibre[2];
+                    $genere = $dadesllibre[3];
+                    $texte="$llibreid:$llibretitol:$isbn:$genere\n";
+                    echo '<br><p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$llibreid.'
+                    </h6><p class="pinicisessio">CONTRASENYA:</p><br><br><br><h6>'.$llibretitol.'
+                    </h6><p class="pinicisessio">NOM COMPLET:</p><br><br><br><h6>'.$isbn.'
+                    </h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$genere.'
+                    </h6>';
+                    echo '____________________________________________________________________________________________________________________';
+
+                    
+                }
+                ?>
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">

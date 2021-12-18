@@ -47,7 +47,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieuser.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -55,6 +54,7 @@
 		<nav>
 			<a href="productesuser.php" class="menu">Productes</a>
 			<a href="prestecsuser.php" class="menu">Prestecs</a>
+			<a href="productesuser.php" class="menu">Llibres</a>
 		</nav>
 		<div class="titol">
 			<h1 id="h1index">POTTER'S LIBRARY</h1>
@@ -64,6 +64,7 @@
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv2_1"><a href="productesuser.php" class="h3"><h3>LLibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="prestecsuser.php" class="h3"><h3>Prestecs</h3><a></div>
+			<div class="indexdiv2_3"><a href="productesuser.php" class="h3"><h3>Llibres</h3><a></div>
 		</div>
 		<div class="indexdiv3">
 			<div class="indexdiv3_1">

@@ -32,7 +32,7 @@
 	<body>
 	  <div class="back"></div>
 	  <nav>
-        <a href="productesadmin.php" class="menu">Llibres</a>
+        <a href="llibresadmin.php" class="menu">Llibres</a>
 		<a href="usuarisadmin.php" class="menu">Usuaris</a>
 		<a href="" class="menu">Treballadors</a>
 	</nav>
@@ -43,7 +43,7 @@
 			<div class="indexdiv1_1"></div>
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
-			<div class="indexdiv2_1"><a href="productesadmin.php" class="h3"><h3>Llibres</h3><a></div>
+			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>Llibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>Usuaris</h3><a></div>
 		</div>
 		<div class="indexdiv3">

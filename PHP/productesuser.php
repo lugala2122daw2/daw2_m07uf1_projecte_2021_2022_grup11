@@ -16,7 +16,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieuser.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -24,21 +23,37 @@
 		<nav>
 			<a href="interficieuser.php" class="menu">Pagina Principal</a>
             <a href="prestecsuser.php" class="menu">Prestecs</a>
-            <a href="" class="menu">Dades</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">PRODUCTES</h1>
+			<h1 id="white">LLIBRES</h1>
         </div>
         <div class="indexdivproductes">
-            <?php
-                $fitxer_productes="/var/www/html/Projecte/PHP/productes";
-                $fp=fopen($fitxer_productes,"r") or die ("No s'ha pogut llegir els productes");
-                if ($fp) {
-                    $mida_fitxer=filesize($fitxer_productes);	
-                    $productes = explode(PHP_EOL, fread($fp,$mida_fitxer));
-                }
+        <?php
+               $fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+               $fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
+               if ($fp) {
+                   $mida_fitxer=filesize($fitxer_llibres);	
+                   $llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
+               }
             ?>
             
+              <?php 
+                foreach ($llibre as $llibres){
+                    $dadesllibre = explode(":",$llibres);
+                    $llibreid = $dadesllibre[0];
+                    $llibretitol = $dadesllibre[1];
+                    $isbn = $dadesllibre[2];
+                    $genere = $dadesllibre[3];
+                    $texte="$llibreid:$llibretitol:$isbn:$genere\n";
+                    $botocomprarya = ('<form action="http://localhost/Projecte/PHP/productesuser.php" method="POST">
+                        <input id="noV" type="text" name="texto" value="'.$texte.'">
+                        <input class="comanda" type="submit" name="afegircomanda" value="AFEGEIX A LA COMANDA"></form>');
+
+                        echo '<br><br><br><h2>'.$llibreid.'</h2><br><p>'.$llibretitol.'</p><br><h6><a href="" class="tipusproducte">'.$isbn.'</a></h6><br>'.$botocomprarya.'<br><br><br>';
+                    
+                    
+                }
+                ?>
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutuser.php" method="POST">

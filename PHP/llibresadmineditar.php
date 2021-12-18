@@ -1,28 +1,36 @@
 <?php
     session_start();
-    echo "Nombre de usuario: " . $_SESSION["usuario"];
-    $filename="/var/www/html/Projecte/PHP/usuaris";
-    $fitxer=fopen($filename,"a+") or die ("No s'ha pogut fer el registre");
-    $user = ($_POST['usuari']);
-    $password = ($_POST['ctsnya']);
-    $nomcognoms = ($_POST['nomcognoms']);
-    $codipostal = ($_POST['codipostal']);
-    $email = ($_POST['email']);
-    $numcontacte = ($_POST['numcontacte']);
-    $visa = ($_POST['visa']);
-    $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$visa\n";
-    if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $visa){
-        fwrite($fitxer,$texte);
-        fclose($fitxer);
-    }
-    
-?>
+	echo "Nombre de usuario: " . $_SESSION["usuario"];
+	
+	$fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+	$fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
+	if ($fp) {
+		$mida_fitxer=filesize($fitxer_llibres);	
+		$llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
+	}
 
+	foreach ($llibre as $llibres) {
+		$logpwd = explode(":",$llibres);
+		if (($_POST['llibreidedit'] == $logpwd[0])&&($_POST['llibreid'])&&($_POST['llibretitol'])&&($_POST['isbn'])&&($_POST['genere'])){
+            $a = $llibres;
+            $llibreid = ($_POST['llibreid']);
+        	$llibretitol = ($_POST['llibretitol']);
+        	$isbn = ($_POST['isbn']);
+        	$genere = ($_POST['genere']);
+        	$texte="$llibreid:$llibretitol:$isbn:$genere\n";
+			$b = file_get_contents('llibres');
+			$c = preg_replace("/$a/", "$texte", $b); 
+			file_put_contents($fitxer_llibres, $c);
+			fclose($fp);
+		}
+	}
+?>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -34,25 +42,21 @@
 		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">AFEGIR USUARIS</h1>
+			<h1 id="white">EDITAR PRODUCTES</h1>
         </div>
         <div class="indexdivproductes">
             <form action="" method="POST">
-            <br><p id="white" class="pinicisessio">NOM DE L'USUARI</p>
-                <input type="text" name="usuari" placeholder=""><br>
-                <p id="white" class="pinicisessio">CONTRASENYA</p>
-                <input type="text" name="ctsnya" placeholder="">
-                <p id="white" class="pinicisessio">NOM I COGNOMS</p>
-                <input type="text" name="nomcognoms" placeholder="">
-                <p id="white" class="pinicisessio">CODI POSTAL</p>
-                <input type="text" name="codipostal" placeholder=""><br>
-                <p id="white" class="pinicisessio">E-MAIL</p>
-                <input type="text" name="email" placeholder=""><br>
-                <p id="white" class="pinicisessio">NUMERO DE CONTACTE</p>
-                <input type="text" name="numcontacte" placeholder=""><br>
-                <p id="white" class="pinicisessio">NUMERO TARGETA VISA</p>
-                <input type="text" name="visa" placeholder=""><br>
-                <br><br><br>
+            <br><p id="white" class="pinicisessio">ID LLIBRE A EDITAR</p>
+                <input type="text" class="num" name="llibreidedit" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">ID LLIBRE</p>
+                <input type="text" class="num" name="llibreid" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">TITOL LLIBRE</p>
+                <input type="text" name="llibretitol" placeholder="TITOL DEL LLIBRE"><br>
+                <p id="white" class="pinicisessio">ISBN</p>
+                <input type="text" class="num" name="isbn" placeholder="ISBN"><br>
+                <p id="white" class="pinicisessio">GENERE</p>
+                <input type="text" class="num" name="genere" placeholder="GENERE"><br>
+                <br><br>
                 <input type="submit" class="comanda" value="AFEGIR"><br><br><br>
             </form>
         </div>
