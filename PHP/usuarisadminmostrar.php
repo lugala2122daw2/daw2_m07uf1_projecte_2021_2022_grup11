@@ -54,23 +54,7 @@
                 }
                 ?>
                 <div class="indexdiv3_2">
-			<form action="cambiardadesadmin.php" method="POST">
-				<br><p class="pinicisessio">NOM DE L'USUARI</p>
-                <input type="text" class="num" name="nomusu" value="<?php echo "".$user."";?>"><br>
-                <p class="pinicisessio">CONTRASENYA</p>
-                <input type="text" name="contra" value="<?php echo "".$password."";?>"><br>
-                <p class="pinicisessio">NOM COMPLET</p>
-                <input type="text" class="num" name="nomcom" value="<?php echo "".$nomcognoms."";?>"><br>
-				<p class="pinicisessio">CODI POSTAL</p>
-				<input type="text" class="num" name="codpos" value="<?php echo "".$logpwd[3]."";?>"><br>
-				<p class="pinicisessio">E-MAIL</p>
-				<input type="text" class="num" name="email" value="<?php echo "".$logpwd[4]."";?>"><br>
-				<p class="pinicisessio">NUMERO DE CONTACTE</p>
-				<input type="text" class="num" name="numcon" value="<?php echo "".$logpwd[5]."";?>"><br>
-				<p class="pinicisessio">VISA</p>
-				<input type="text" class="num" name="numvis" value="<?php echo "".$logpwd[6]."";?>"><br>
-                <input type="submit" class="prestec" value="CANVIAR DADES"><br><br><br>
-            </form>
+			
 			</div>
         </div>
         <div class="usuaricuadre">

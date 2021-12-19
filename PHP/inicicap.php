@@ -17,7 +17,7 @@
 	}
 	if (($_POST['usuari'] != $logpwd[0]) && ($_POST['ctsnya'] != $logpwd[1])){
 		header("Status: 301 Moved Permanently");
-		header("Location: ../INICIADMIN.html");
+		header("Location: ../INICIACAP.html");
 		exit;
 	}
 	$_SESSION['usuario'] = ($_POST['usuari']);
@@ -26,13 +26,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
-        <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
+        <link href="../CSS/estilsinterficiecap.css" rel="stylesheet" type="text/css">
         <TITLE>Projecte M07</TITLE>
 </head>
 	<body>
 	  <div class="back"></div>
 	  <nav>
-        <a href="productesadmin.php" class="menu">Llibres</a>
+        <a href="llibresadmin.php" class="menu">Llibres</a>
 		<a href="usuarisadmin.php" class="menu">Usuaris</a>
 		<a href="" class="menu">Treballadors</a>
 	</nav>
@@ -43,7 +43,7 @@
 			<div class="indexdiv1_1"></div>
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
-			<div class="indexdiv2_1"><a href="productesadmin.php" class="h3"><h3>Llibres</h3><a></div>
+			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>Llibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>Usuaris</h3><a></div>
 			<div class="indexdiv2_3"><a href="" class="h3"><h3>Treballadors</h3><a></div>
 		</div>

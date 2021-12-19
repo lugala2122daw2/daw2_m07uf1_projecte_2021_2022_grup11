@@ -52,9 +52,9 @@
 	<body>
 		<div class="back"></div>
 		<nav>
-			<a href="productesuser.php" class="menu">Productes</a>
-			<a href="prestecsuser.php" class="menu">Prestecs</a>
-			<a href="productesuser.php" class="menu">Llibres</a>
+			<a href="productesuser.php" class="menu">LLIBRES</a>
+			<a href="prestecsuser.php" class="menu">PRESTECS</a>
+			<a href="productesuser.php" class="menu">DADES</a>
 		</nav>
 		<div class="titol">
 			<h1 id="h1index">POTTER'S LIBRARY</h1>

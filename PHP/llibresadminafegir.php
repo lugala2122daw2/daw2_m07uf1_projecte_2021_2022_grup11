@@ -26,7 +26,7 @@
 		<div class="back"></div>
 		<nav>
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="productesadmin.php" class="menu">Llibres</a>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
 		</nav>
         <div class="titolp">

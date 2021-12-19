@@ -37,7 +37,20 @@
                }
             ?>
             
-              <?php 
+            <div class="titolp">
+			<h1 id="white">LLIBRES DISPONIBLES</h1>
+        </div>
+        <div class="indexdivproductes">
+            <?php
+               $fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+               $fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
+               if ($fp) {
+                   $mida_fitxer=filesize($fitxer_llibres);	
+                   $llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
+               }
+            ?>
+            
+            <?php 
                 foreach ($llibre as $llibres){
                     $dadesllibre = explode(":",$llibres);
                     $llibreid = $dadesllibre[0];
@@ -45,15 +58,15 @@
                     $isbn = $dadesllibre[2];
                     $genere = $dadesllibre[3];
                     $texte="$llibreid:$llibretitol:$isbn:$genere\n";
-                    $botocomprarya = ('<form action="http://localhost/Projecte/PHP/productesuser.php" method="POST">
-                        <input id="noV" type="text" name="texto" value="'.$texte.'">
-                        <input class="comanda" type="submit" name="afegircomanda" value="AFEGEIX A LA COMANDA"></form>');
-
-                        echo '<br><br><br><h2>'.$llibreid.'</h2><br><p>'.$llibretitol.'</p><br><h6><a href="" class="tipusproducte">'.$isbn.'</a></h6><br>'.$botocomprarya.'<br><br><br>';
-                    
-                    
+                    echo '<br><p class="pinicisessio1">ID LLIBRE:</p><br><br><br><h6>'.$llibreid.'
+                    </h6><p class="pinicisessio1">TITOL:</p><br><br><br><h6>'.$llibretitol.'
+                    </h6><p class="pinicisessio1">ISBN:</p><br><br><br><h6>'.$isbn.'
+                    </h6><p class="pinicisessio1">GENERE:</p><br><br><br><h6>'.$genere.'
+                    </h6>';
+                    echo '____________________________________________________________________________________________________________________';
                 }
                 ?>
+        </div>
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutuser.php" method="POST">

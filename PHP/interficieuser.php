@@ -23,7 +23,7 @@
 			<div class="indexdiv1_1"></div>
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
-			<div class="indexdiv2_1"><a href="productesuser.php" class="h3"><h3>PRODUCTES</h3><a></div>
+			<div class="indexdiv2_1"><a href="productesuser.php" class="h3"><h3>LLIBRES</h3><a></div>
 			<div class="indexdiv2_2"><a href="prestecsuser.php" class="h3"><h3>PRESTECS</h3><a></div>
 			<div class="indexdiv2_3"><a href="" class="h3"><h3><?php echo "". $_SESSION["usuario"];?></h3><a></div>
 		</div>

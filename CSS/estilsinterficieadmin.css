@@ -61,6 +61,7 @@ div.titol {
     width: 100%;
     height: 400px;
     transition-duration: 2s;
+    color: white;
 }
 
 div.titolp {
@@ -75,88 +76,6 @@ div.titolp {
     background-size: cover;
 }
 
-div.titolpbasketball {
-    position: relative;
-    text-align: center;
-    margin-top: 110px;
-    padding-top: 100px;
-    width: 100%;
-    height: 400px;
-    transition-duration: 2s;
-    background: url('../IMATGES/titolbasketball.jpg') no-repeat top center #efeff1;
-    background-size: cover;
-}
-
-div.titolpfootball {
-    position: relative;
-    text-align: center;
-    margin-top: 110px;
-    padding-top: 100px;
-    width: 100%;
-    height: 400px;
-    transition-duration: 2s;
-    background: url('../IMATGES/titolfootball.jpg') no-repeat top center #efeff1;
-    background-size: cover;
-}
-
-div.titolpaltres {
-    position: relative;
-    text-align: center;
-    margin-top: 110px;
-    padding-top: 100px;
-    width: 100%;
-    height: 400px;
-    transition-duration: 2s;
-    background: url('../IMATGES/titolaltres.jpg') no-repeat top center #efeff1;
-    background-size: cover;
-}
-
-div.menuproductes {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: 250px;
-    transition-duration: 2s;
-    background-color: white;
-}
-
-div.menuproductes1 {
-    position: relative;
-    text-align: center;
-    object-fit: cover;
-    float: left;
-    width: 33.33333333333333333%;
-    height: 100%;
-    transition-duration: 2s;
-    background: url('../IMATGES/menuproductes1.jpg') no-repeat top center #efeff134;
-    background-size: cover;
-}
-
-div.menuproductes2 {
-    position: relative;
-    text-align: center;
-    float: left;
-    left: 0;
-    top: 0;
-    width: 33.33333333333333333%;
-    height: 100%;
-    transition-duration: 2s;
-    background: url('../IMATGES/menuproductes2.jpg') no-repeat top center #efeff1;
-    background-size: cover;
-}
-
-div.menuproductes3 {
-    position: relative;
-    text-align: center;
-    float: left;
-    left: 0;
-    top: 0;
-    width: 33.33333333333333333%;
-    height: 100%;
-    transition-duration: 2s;
-    background: url('../IMATGES/menuproductes3.jpg') no-repeat top center #efeff1;
-    background-size: cover;
-}
 
 div.productes {
     position: relative;
@@ -202,7 +121,7 @@ div.productes2 {
     width: 50%;
     height: 100%;
     transition-duration: 2s;
-    background: url('../IMATGES/menuproductes5.jpg') no-repeat top center #efeff1;
+    background: #efeff1;
     background-size: cover;
 }
 
@@ -271,21 +190,7 @@ div.usuaricuadre {
     transition-duration: 2s;
 }
 
-div.usuaricuadrecomandes {
-    position: fixed;
-    text-align: center;
-    width: 25%;
-    height: 100%;
-    top: 92%;
-    right: 0%;
-    padding-top: 5px;
-    background: white;
-    transition-duration: 1s;
-}
 
-div.usuaricuadrecomandes:hover {
-    top: 20%;
-}
 
 input[type=submit] {
     font-family: 'Raleway', sans-serif;
@@ -596,16 +501,3 @@ input.num[type=text] {
     font-size: 1em;
 }
 
-select {
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 1.6em;
-    width: 15%;
-    height: 8%;
-    padding: 10px;
-    border-radius: 25px;
-    background: none;
-    color: white;
-    outline: none;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-}

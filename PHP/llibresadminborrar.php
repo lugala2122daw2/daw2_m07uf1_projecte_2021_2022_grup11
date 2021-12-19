@@ -8,16 +8,18 @@
 		$mida_fitxer=filesize($fitxer_llibres);	
 		$llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
 	}
-
+	
 	foreach ($llibre as $llibres) {
 		$logpwd = explode(":",$llibres);
 		if (($_POST['llibreid'] == $logpwd[0])){
+			if ("llibreid" != NULL){
 			$a = $llibres;
 			$b = file_get_contents('llibre');;
 			$c = preg_replace("/$a/", '', $b); 
 			file_put_contents($fitxer_llibres, $c);
 		}
-	}
+		}
+	}	
 ?>
 <html>
 <head>
@@ -31,7 +33,7 @@
 		<div class="back"></div>
 		<nav>
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="productesadmin.php" class="menu">Llibres</a>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
 		    <a href="comandesadmin.php" class="menu">Prestecs</a>
 		</nav>
