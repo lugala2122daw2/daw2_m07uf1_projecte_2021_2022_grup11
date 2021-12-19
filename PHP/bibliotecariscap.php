@@ -16,7 +16,7 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">LLibres</a>
             <a href="usuarisadmin.php" class="menu">Usuaris</a>
-            <a href="" class="menu">Prestecs</a>
+            <a href="" class="menu">Bibliotecaris</a>
             </nav>
         <div class="titolp">
 			<h1 id="white">USUARIS</h1>
@@ -24,14 +24,14 @@
 		<div class="indexdivproductest">
             <div class="productes1"></div>
 			<div class="productes2"></div>
-            <div class="productes1_1"><a href="usuarisadminmostrar.php" class="h4"><h4>MOSTRAR USUARIS</h4><a></div>
-			<div class="productes1_2"><a href="usuarisadmineditar.php" class="h4"><h4>MODIFICAR USUARIS</h4><a></div>
+            <div class="productes1_1"><a href="bibliotecariscapmostrar.php" class="h4"><h4>MOSTRAR BIBLIOTECARIS</h4><a></div>
+			<div class="productes1_2"><a href="bibliotecariscapeditar.php" class="h4"><h4>MODIFICAR BIBLIOTECARIS</h4><a></div>
         </div>
         <div class="indexdivproductest">
             <div class="productes1"></div>
             <div class="productes2"></div>
-            <div class="productes1_1"><a href="usuarisadminborrar.php" class="h4"><h4>BORRAR<br>USUARIS</h4><a></div>
-            <div class="productes1_2"><a href="usuarisadminafegir.php" class="h4"><h4>AFEGIR USUARIS</h4><a></div>
+            <div class="productes1_1"><a href="bibliotecariscapborrar.php" class="h4"><h4>BORRAR<br>BIBLIOTECARIS</h4><a></div>
+            <div class="productes1_2"><a href="bibliotecariscapafegir.php" class="h4"><h4>AFEGIR <br>BIBLIOTECARIS</h4><a></div>
         </div>
         <div class="usuaricuadre">
         <form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">

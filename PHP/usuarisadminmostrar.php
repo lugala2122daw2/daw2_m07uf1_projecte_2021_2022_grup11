@@ -8,16 +8,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
 		<div class="back"></div>
 		<nav>
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="" class="menu">Productes</a>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Comandes</a>
+		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
 			<h1 id="white">USUARIS REGISTRATS</h1>
@@ -41,7 +40,7 @@
                     $codipostal = $dadesusuari[3];
                     $email = $dadesusuari[4];
                     $numcontacte = $dadesusuari[5];
-                    $visa = $dadesusuari[6];
+                    $carrer = $dadesusuari[6];
 
                     echo '<br><p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$nomusuari.'
                     </h6><p class="pinicisessio">CONTRASENYA:</p><br><br><br><h6>'.$contrasenyausuari.'
@@ -49,11 +48,14 @@
                     </h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$codipostal.'
                     </h6><p class="pinicisessio">E-MAIL:</p><br><br><br><h6>'.$email.'
                     </h6><p class="pinicisessio">NUMERO DE CONTACTE:</p><br><br><br><h6>'.$numcontacte.'
-                    </h6><p class="pinicisessio">VISA:</p><br><br><br><h6>'.$visa.'
+                    </h6><p class="pinicisessio">carrer:</p><br><br><br><h6>'.$carrer.'
                     </h6>';
                     echo '____________________________________________________________________________________________________________________';
                 }
                 ?>
+                <div class="indexdiv3_2">
+			
+			</div>
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">

@@ -2,28 +2,31 @@
     session_start();
 	echo "Nombre de usuario: " . $_SESSION["usuario"];
 	
-	$fitxer_usuaris="/var/www/html/Projecte/PHP/usuaris";
-	$fp=fopen($fitxer_usuaris,"r+") or die ("No s'ha pogut validar l'usuari");
+	$fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+	$fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
 	if ($fp) {
-		$mida_fitxer=filesize($fitxer_usuaris);	
-		$usuari = explode(PHP_EOL, fread($fp,$mida_fitxer));
+		$mida_fitxer=filesize($fitxer_llibres);	
+		$llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
 	}
-
-	foreach ($usuari as $user) {
-		$logpwd = explode(":",$user);
-		if (($_POST['proid'] == $logpwd[0])){
-			$a = $user;
-			$b = file_get_contents('usuaris');;
+	
+	foreach ($llibre as $llibres) {
+		$logpwd = explode(":",$llibres);
+		if (($_POST['llibreid'] == $logpwd[0])){
+			if ("llibreid" != NULL){
+			$a = $llibres;
+			$b = file_get_contents('llibre');;
 			$c = preg_replace("/$a/", '', $b); 
-			file_put_contents($fitxer_usuaris, $c);
+			file_put_contents($fitxer_llibres, $c);
 		}
-	}
+		}
+	}	
 ?>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -32,15 +35,15 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Prestecs</a>
+		    <a href="comandesadmin.php" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">BORRAR USUARIS</h1>
+			<h1 id="white">BORRAR PRODUCTES</h1>
         </div>
         <div class="indexdivproductes">
             <form action="" method="POST">
-            <br><p id="white" class="pinicisessio">NOM DE L'USUARI A ESBORRAR</p>
-                <input type="text" name="proid" placeholder=""><br><br>
+            <br><p id="white" class="pinicisessio">ID LLIBRE A BORRAR</p>
+                <input type="text" class="num" name="llibreid" placeholder="ID NUMERIC"><br><br>
                 <input type="submit" class="comanda" value="BORRAR"><br><br><br>
             </form>
         </div>

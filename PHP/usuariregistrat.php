@@ -3,7 +3,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinici.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 
@@ -23,9 +22,9 @@
                 $codipostal = ($_POST['codipostal']);
                 $email = ($_POST['email']);
                 $numcontacte = ($_POST['numcontacte']);
-                $visa = ($_POST['visa']);
-                $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$visa\n";
-                if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $visa){
+                $carrer = ($_POST['carrer']);
+                $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$carrer\n";
+                if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $carrer){
                     fwrite($fitxer,$texte);
                     fclose($fitxer);
                     echo "Usuario creado con exito!";
@@ -40,7 +39,7 @@
                 <input id="noV" type="user" name="codipostal" value="<?php echo "".$codipostal."";?>">
                 <input id="noV" type="user" name="email" value="<?php echo "".$email."";?>">
                 <input id="noV" type="user" name="numcontacte" value="<?php echo "".$numcontacte."";?>">
-                <input id="noV" type="user" name="visa" value="<?php echo "".$visa."";?>">
+                <input id="noV" type="user" name="carrer" value="<?php echo "".$carrer."";?>">
                 <br><br>
                 <input type="submit" value="ACCEDEIX A LA PAGINA">
 		    </form>

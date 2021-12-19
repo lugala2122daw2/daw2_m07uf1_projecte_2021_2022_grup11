@@ -8,33 +8,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
 		<div class="back"></div>
 		<nav>
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="llibresadmin.php" class="menu">LLibres</a>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
             <a href="usuarisadmin.php" class="menu">Usuaris</a>
             <a href="" class="menu">Prestecs</a>
             </nav>
         <div class="titolp">
-			<h1 id="white">USUARIS</h1>
+			<h1 id="white">LLIBRES ADMINISTRADOR</h1>
 		</div>
 		<div class="indexdivproductest">
-            <div class="productes1"></div>
-			<div class="productes2"></div>
-            <div class="productes1_1"><a href="usuarisadminmostrar.php" class="h4"><h4>MOSTRAR USUARIS</h4><a></div>
-			<div class="productes1_2"><a href="usuarisadmineditar.php" class="h4"><h4>MODIFICAR USUARIS</h4><a></div>
+            <div class="productes"></div>
+            <div class="productes_1"><a href="llibresadminmostrar.php" class="h4"><h4>MOSTRAR PRODUCTES</h4><a></div>
         </div>
         <div class="indexdivproductest">
             <div class="productes1"></div>
             <div class="productes2"></div>
-            <div class="productes1_1"><a href="usuarisadminborrar.php" class="h4"><h4>BORRAR<br>USUARIS</h4><a></div>
-            <div class="productes1_2"><a href="usuarisadminafegir.php" class="h4"><h4>AFEGIR USUARIS</h4><a></div>
+            <div class="productes1_1"><a href="llibresadminborrar.php" class="h4"><h4>BORRAR PRODUCTES</h4><a></div>
+            <div class="productes1_2"><a href="llibresadminafegir.php" class="h4"><h4>AFEGIR PRODUCTES</h4><a></div>
+        </div>
+		<div class="indexdivproductest">
+            <div class="productes"></div>
+            <div class="productes_1"><a href="llibresadmineditar.php" class="h4"><h4>EDITAR PRODUCTES</h4><a></div>
         </div>
         <div class="usuaricuadre">
-        <form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
+		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
 			<p class="pinicisessio"><?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;

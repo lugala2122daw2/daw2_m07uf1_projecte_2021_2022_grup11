@@ -27,13 +27,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07</TITLE>
 </head>
 	<body>
 	  <div class="back"></div>
 	  <nav>
-        <a href="productesadmin.php" class="menu">Llibres</a>
+        <a href="llibresadmin.php" class="menu">Llibres</a>
 		<a href="usuarisadmin.php" class="menu">Usuaris</a>
 		<a href="" class="menu">Treballadors</a>
 	</nav>
@@ -44,10 +43,36 @@
 			<div class="indexdiv1_1"></div>
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
-			<div class="indexdiv2_1"><a href="productesadmin.php" class="h3"><h3>Llibres</h3><a></div>
+			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>Llibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>Usuaris</h3><a></div>
-			<div class="indexdiv2_3"><a href="" class="h3"><h3>Treballadors</h3><a></div>
 		</div>
+		<div class="indexdiv3">
+		<div class="indexdiv3_1">
+				<p id="black" class="pinicisessio">DADES DEL TEU USUARI</p>
+				<?php
+					foreach ($usuaris as $usuari) {
+						$dadesusuari = explode(":",$usuari);
+						$nomusuari = $dadesusuari[0];
+						$contrasenyausuari = $dadesusuari[1];
+						$nomcomplet = $dadesusuari[2];
+						$codipostal = $dadesusuari[3];
+						$email = $dadesusuari[4];
+						$numcontacte = $dadesusuari[5];
+						$carrer = $dadesusuari[6];
+						
+						if (session_name() == $nomusuari)
+						echo '<p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$nomusuari.'
+						</h6><p class="pinicisessio">CONTRASENYA:</p><br><br><br><h6>'.$contrasenyausuari.'
+						</h6><p class="pinicisessio">NOM COMPLET:</p><br><br><br><h6>'.$nomcomplet.'
+						</h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$codipostal.'
+						</h6><p class="pinicisessio">E-MAIL:</p><br><br><br><h6>'.$email.'
+						</h6><p class="pinicisessio">NUMERO DE CONTACTE:</p><br><br><br><h6>'.$numcontacte.'
+						</h6><p class="pinicisessio">carrer:</p><br><br><br><h6>'.$carrer.'
+						</h6>';
+					}
+				?>
+			</div>
+				</div>
 	<div class="usuaricuadre">
 		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
 			<p class="pinicisessio">

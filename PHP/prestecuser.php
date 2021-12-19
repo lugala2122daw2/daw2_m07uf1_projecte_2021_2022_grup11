@@ -58,7 +58,7 @@
                                                 <input type="text" id="noV" name="proid" value="'.$producte.'">
                                              <input class="prestec" type="submit" value="BORRAR PRODUCTE">
                                          </form>';
-                    echo '<br><br><br><h2>'.$productenom.'</h2><br><p>'.$productepreu.'</p><br><h6><a href="productesuserbasketball.php" class="tipusproducte">'.$productetipus.'</a></h6><br>'.$botoborrarprestec.''; 
+                    echo '<br><br><br><h2>'.$productenom.'</h2><br><p>'.$productepreu.'</p><br><h6><a href="" class="tipusproducte">'.$productetipus.'</a></h6><br>'.$botoborrarprestec.''; 
                     
                 }
             ?>

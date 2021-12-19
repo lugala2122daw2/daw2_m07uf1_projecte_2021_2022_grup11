@@ -1,7 +1,7 @@
 <?php
     session_start();
     echo "Nombre de usuario: " . $_SESSION["usuario"];
-    $filename="/var/www/html/Projecte/PHP/usuaris";
+    $filename="/var/www/html/Projecte/PHP/usuarisadmin";
     $fitxer=fopen($filename,"a+") or die ("No s'ha pogut fer el registre");
     $user = ($_POST['usuari']);
     $password = ($_POST['ctsnya']);
@@ -9,16 +9,16 @@
     $codipostal = ($_POST['codipostal']);
     $email = ($_POST['email']);
     $numcontacte = ($_POST['numcontacte']);
-    $carrer = ($_POST['carrer']);
-    $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$carrer\n";
-    if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $carrer){
+    $salari = ($_POST['salari']);
+    $texte="$user:$password:$nomcognoms:$codipostal:$email:$numcontacte:$salari\n";
+    if($user && $password && $nomcognoms && $codipostal && $email && $numcontacte && $salari){
         fwrite($fitxer,$texte);
         fclose($fitxer);
     }
     
 ?>
 
-<html>
+<html>                        
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
@@ -31,7 +31,7 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Prestecs</a>
+		    <a href="" class="menu">BIBLIOTECARIS</a>
 		</nav>
         <div class="titolp">
 			<h1 id="white">AFEGIR USUARIS</h1>
@@ -50,8 +50,8 @@
                 <input type="text" name="email" placeholder=""><br>
                 <p id="white" class="pinicisessio">NUMERO DE CONTACTE</p>
                 <input type="text" name="numcontacte" placeholder=""><br>
-                <p id="white" class="pinicisessio">NUMERO TARGETA carrer</p>
-                <input type="text" name="carrer" placeholder=""><br>
+                <p id="white" class="pinicisessio">SALARI </p>
+                <input type="text" name="salari" placeholder=""><br>
                 <br><br><br>
                 <input type="submit" class="comanda" value="AFEGIR"><br><br><br>
             </form>

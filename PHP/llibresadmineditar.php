@@ -2,20 +2,26 @@
     session_start();
 	echo "Nombre de usuario: " . $_SESSION["usuario"];
 	
-	$fitxer_usuaris="/var/www/html/Projecte/PHP/usuaris";
-	$fp=fopen($fitxer_usuaris,"r+") or die ("No s'ha pogut validar l'usuari");
+	$fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+	$fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
 	if ($fp) {
-		$mida_fitxer=filesize($fitxer_usuaris);	
-		$usuari = explode(PHP_EOL, fread($fp,$mida_fitxer));
+		$mida_fitxer=filesize($fitxer_llibres);	
+		$llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
 	}
 
-	foreach ($usuari as $user) {
-		$logpwd = explode(":",$user);
-		if (($_POST['proid'] == $logpwd[0])){
-			$a = $user;
-			$b = file_get_contents('usuaris');;
-			$c = preg_replace("/$a/", '', $b); 
-			file_put_contents($fitxer_usuaris, $c);
+	foreach ($llibre as $llibres) {
+		$logpwd = explode(":",$llibres);
+		if (($_POST['llibreidedit'] == $logpwd[0])&&($_POST['llibreid'])&&($_POST['llibretitol'])&&($_POST['isbn'])&&($_POST['genere'])){
+            $a = $llibres;
+            $llibreid = ($_POST['llibreid']);
+        	$llibretitol = ($_POST['llibretitol']);
+        	$isbn = ($_POST['isbn']);
+        	$genere = ($_POST['genere']);
+        	$texte="$llibreid:$llibretitol:$isbn:$genere\n";
+			$b = file_get_contents('llibres');
+			$c = preg_replace("/$a/", "$texte", $b); 
+			file_put_contents($fitxer_llibres, $c);
+			fclose($fp);
 		}
 	}
 ?>
@@ -24,6 +30,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieadmin.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -35,13 +42,22 @@
 		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">BORRAR USUARIS</h1>
+			<h1 id="white">EDITAR PRODUCTES</h1>
         </div>
         <div class="indexdivproductes">
             <form action="" method="POST">
-            <br><p id="white" class="pinicisessio">NOM DE L'USUARI A ESBORRAR</p>
-                <input type="text" name="proid" placeholder=""><br><br>
-                <input type="submit" class="comanda" value="BORRAR"><br><br><br>
+            <br><p id="white" class="pinicisessio">ID LLIBRE A EDITAR</p>
+                <input type="text" class="num" name="llibreidedit" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">ID LLIBRE</p>
+                <input type="text" class="num" name="llibreid" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">TITOL LLIBRE</p>
+                <input type="text" name="llibretitol" placeholder="TITOL DEL LLIBRE"><br>
+                <p id="white" class="pinicisessio">ISBN</p>
+                <input type="text" class="num" name="isbn" placeholder="ISBN"><br>
+                <p id="white" class="pinicisessio">GENERE</p>
+                <input type="text" class="num" name="genere" placeholder="GENERE"><br>
+                <br><br>
+                <input type="submit" class="comanda" value="EDITAR"><br><br><br>
             </form>
         </div>
         <div class="usuaricuadre">

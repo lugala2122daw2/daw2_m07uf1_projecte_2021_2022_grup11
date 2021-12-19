@@ -8,7 +8,7 @@
    	foreach ($usuaris as $usuari) {
 		$logpwd = explode(":",$usuari);
 
-			if (($_POST['nomsess'] == $logpwd[0])){
+			/*if (($_POST['nomsess'] == $logpwd[0])){
 				$a = $usuari;
 				$nomusu = ($_POST['nomusu']);
 				$contra = ($_POST['contra']);
@@ -21,7 +21,7 @@
 				$b = file_get_contents('usuaris');
 				$c = preg_replace("/$a/", "$texte", $b); 
 				file_put_contents($fitxer_usuaris, $c);
-			}
+			}*/
 
 
 		if (($_POST['usuari'] == $logpwd[0]) && ($_POST['ctsnya'] == $logpwd[1])){
@@ -33,13 +33,12 @@
 			session_start();
 			break;
 		}
-	
+	}
 	if (($_POST['usuari'] != $logpwd[0]) && ($_POST['ctsnya'] != $logpwd[1])){
 		header("Status: 301 Moved Permanently");
 		header("Location: ../INICIUSER.html");
 		exit;
 	}
-}
 
 	$_SESSION['usuario'] = ($_POST['usuari']);
 ?>
@@ -48,14 +47,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieuser.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
 		<div class="back"></div>
 		<nav>
-			<a href="productesuser.php" class="menu">Productes</a>
-			<a href="prestecsuser.php" class="menu">Prestecs</a>
+			<a href="productesuser.php" class="menu">LLIBRES</a>
+			<a href="prestecsuser.php" class="menu">PRESTECS</a>
+			<a href="productesuser.php" class="menu">DADES</a>
 		</nav>
 		<div class="titol">
 			<h1 id="h1index">POTTER'S LIBRARY</h1>
@@ -65,10 +64,11 @@
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv2_1"><a href="productesuser.php" class="h3"><h3>LLibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="prestecsuser.php" class="h3"><h3>Prestecs</h3><a></div>
+			<div class="indexdiv2_3"><a href="productesuser.php" class="h3"><h3>Llibres</h3><a></div>
 		</div>
 		<div class="indexdiv3">
 			<div class="indexdiv3_1">
-				<p id="white" class="pinicisessio">DADES DEL TEU USUARI</p>
+				<p id="black" class="pinicisessio">DADES DEL TEU USUARI</p>
 				<?php
 					foreach ($usuaris as $usuari) {
 						$dadesusuari = explode(":",$usuari);
@@ -78,7 +78,7 @@
 						$codipostal = $dadesusuari[3];
 						$email = $dadesusuari[4];
 						$numcontacte = $dadesusuari[5];
-						$visa = $dadesusuari[6];
+						$carrer = $dadesusuari[6];
 						
 						if (session_name() == $nomusuari)
 						echo '<p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$nomusuari.'
@@ -87,13 +87,13 @@
 						</h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$codipostal.'
 						</h6><p class="pinicisessio">E-MAIL:</p><br><br><br><h6>'.$email.'
 						</h6><p class="pinicisessio">NUMERO DE CONTACTE:</p><br><br><br><h6>'.$numcontacte.'
-						</h6><p class="pinicisessio">VISA:</p><br><br><br><h6>'.$visa.'
+						</h6><p class="pinicisessio">carrer:</p><br><br><br><h6>'.$carrer.'
 						</h6>';
 					}
 				?>
 			</div>
 			<div class="indexdiv3_2">
-			<form action="" method="POST">
+			<form action="cambiardadesuser.php" method="POST">
 				<input type="text" id="noV" class="num" name="nomsess" value="<?php echo "".session_name()."";?>">
 				<br><p class="pinicisessio">NOM DE L'USUARI</p>
                 <input type="text" class="num" name="nomusu" value="<?php echo "".$user."";?>"><br>
@@ -107,13 +107,10 @@
 				<input type="text" class="num" name="email" value="<?php echo "".$logpwd[4]."";?>"><br>
 				<p class="pinicisessio">NUMERO DE CONTACTE</p>
 				<input type="text" class="num" name="numcon" value="<?php echo "".$logpwd[5]."";?>"><br>
-				<p class="pinicisessio">VISA</p>
+				<p class="pinicisessio">CARRER</p>
 				<input type="text" class="num" name="numvis" value="<?php echo "".$logpwd[6]."";?>"><br>
                 <input type="submit" class="prestec" value="CANVIAR DADES"><br><br><br>
             </form>
-			</div>
-			<div class="indexdiv3_3">
-
 			</div>
 		</div>
 		<div class="usuaricuadre">
