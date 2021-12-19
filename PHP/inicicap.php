@@ -32,10 +32,10 @@
 	<body>
 	  <div class="back"></div>
 	  <nav>
-        <a href="llibresadmin.php" class="menu">Llibres</a>
-		<a href="usuarisadmin.php" class="menu">Usuaris</a>
-		<a href="bibliotecariscap.php" class="menu">Treballadors</a>
-	</nav>
+            <a href="llibrescap.php" class="menu">Llibres</a>
+		    <a href="usuariscap.php" class="menu">Usuaris</a>
+		    <a href="bibliotecariscap.php" class="menu">Treballadors</a>
+		</nav>
 	  <div class="titol">
 		<h1 id="h1index">Potter's Library</h1>
 	</div>
@@ -43,13 +43,13 @@
 			<div class="indexdiv1_1"></div>
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
-			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>Llibres</h3><a></div>
-			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>Usuaris</h3><a></div>
+			<div class="indexdiv2_1"><a href="llibrescap.php" class="h3"><h3>Llibres</h3><a></div>
+			<div class="indexdiv2_2"><a href="usuariscap.php" class="h3"><h3>Usuaris</h3><a></div>
 			<div class="indexdiv2_3"><a href="bibliotecariscap.php" class="h3"><h3>Treballadors</h3><a></div>
 		</div>
 	<div class="usuaricuadre">
-		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-			<p class="pinicisessio">
+		<form action="http://localhost/Projecte/PHP/logoutcap.php" method="POST">
+			<p class="pinicisessio1">
 	<?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;

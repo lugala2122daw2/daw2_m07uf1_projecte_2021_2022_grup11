@@ -28,6 +28,9 @@ h1:hover {
 h1#white {
     color: white;
 }
+h1#black {
+    color: black;
+}
 
 div.titol {
     position: relative;
@@ -138,7 +141,7 @@ p.pinicisessio1 {
     margin-top: 20px;
     letter-spacing: 1px;
     transition: 1s;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 

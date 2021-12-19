@@ -31,7 +31,7 @@
                 }
                 else{ echo "No he podido crearlo, no has puesto todo lo que pedíamos...";
                     die;}
-            ?>  
+            ?> 
             <form action="http://localhost/Projecte/PHP/iniciuser.php" method="POST">
                 <input id="noV" type="user" name="usuari" value="<?php echo "".$user."";?>">
                 <input id="noV" type="password" name="ctsnya" value="<?php echo "".$password."";?>">

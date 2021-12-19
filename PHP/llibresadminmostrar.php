@@ -24,10 +24,9 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">LLIBRES DISPONIBLES</h1>
+			<h1 id="black">LLIBRES DISPONIBLES</h1>
         </div>
         <div class="indexdivproductes">
             <?php
@@ -47,10 +46,10 @@
                     $isbn = $dadesllibre[2];
                     $genere = $dadesllibre[3];
                     $texte="$llibreid:$llibretitol:$isbn:$genere\n";
-                    echo '<br><p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$llibreid.'
-                    </h6><p class="pinicisessio">CONTRASENYA:</p><br><br><br><h6>'.$llibretitol.'
-                    </h6><p class="pinicisessio">NOM COMPLET:</p><br><br><br><h6>'.$isbn.'
-                    </h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$genere.'
+                    echo '<br><p class="pinicisessio">ID LLIBRE:</p><br><br><br><h6>'.$llibreid.'
+                    </h6><p class="pinicisessio">TITOL LLIBRE:</p><br><br><br><h6>'.$llibretitol.'
+                    </h6><p class="pinicisessio">ISBN:</p><br><br><br><h6>'.$isbn.'
+                    </h6><p class="pinicisessio">GENERE:</p><br><br><br><h6>'.$genere.'
                     </h6>';
                     echo '____________________________________________________________________________________________________________________';
                 }
@@ -58,7 +57,7 @@
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-				<p class="pinicisessio"><?php
+				<p class="pinicisessio1"><?php
 				if (!isset($_SESSION["comptador"])) {
 					$_SESSION['comptador'] = 1;
 					echo "Benvingut " . $_SESSION["usuario"]."<br>";

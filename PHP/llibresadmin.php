@@ -17,28 +17,27 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">Llibres</a>
             <a href="usuarisadmin.php" class="menu">Usuaris</a>
-            <a href="" class="menu">Prestecs</a>
-            </nav>
+        </nav>
         <div class="titolp">
-			<h1 id="white">LLIBRES ADMINISTRADOR</h1>
+			<h1 id="black">LLIBRES ADMINISTRADOR</h1>
 		</div>
 		<div class="indexdivproductest">
             <div class="productes"></div>
-            <div class="productes_1"><a href="llibresadminmostrar.php" class="h4"><h4>MOSTRAR PRODUCTES</h4><a></div>
+            <div class="productes_1"><a href="llibresadminmostrar.php" class="h4"><h4>MOSTRAR LLIBRES</h4><a></div>
         </div>
         <div class="indexdivproductest">
             <div class="productes1"></div>
             <div class="productes2"></div>
-            <div class="productes1_1"><a href="llibresadminborrar.php" class="h4"><h4>BORRAR PRODUCTES</h4><a></div>
-            <div class="productes1_2"><a href="llibresadminafegir.php" class="h4"><h4>AFEGIR PRODUCTES</h4><a></div>
+            <div class="productes1_1"><a href="llibresadminborrar.php" class="h4"><h4>BORRAR LLIBRES</h4><a></div>
+            <div class="productes1_2"><a href="llibresadminafegir.php" class="h4"><h4>AFEGIR LLIBRES</h4><a></div>
         </div>
 		<div class="indexdivproductest">
             <div class="productes"></div>
-            <div class="productes_1"><a href="llibresadmineditar.php" class="h4"><h4>EDITAR PRODUCTES</h4><a></div>
+            <div class="productes_1"><a href="llibresadmineditar.php" class="h4"><h4>EDITAR LLIBRES</h4><a></div>
         </div>
         <div class="usuaricuadre">
 		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-			<p class="pinicisessio"><?php
+			<p class="pinicisessio1"><?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;
 				 echo "Benvingut " .session_name()."<br>";

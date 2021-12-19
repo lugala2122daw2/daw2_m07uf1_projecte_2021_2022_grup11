@@ -42,7 +42,7 @@ h1 {
     font-size: 6em;
     letter-spacing: 1px;
     transition: 1s;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 h1:hover {
@@ -52,7 +52,9 @@ h1:hover {
 h1#white {
     color: white;
 }
-
+h1#black{
+    color: black;
+}
 div.titol {
     position: relative;
     text-align: center;
@@ -169,7 +171,7 @@ nav a {
 }
 
 nav a.menu {
-    color: black;
+    color: white;
 }
 
 nav a.menu:hover {
@@ -212,6 +214,16 @@ input[type=submit]:hover {
 }
 
 p.pinicisessio {
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    transition: 1s;
+    color: white;
+}
+
+p.pinicisessio1 {
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
     font-size: 1em;
@@ -480,6 +492,11 @@ input#comprarya:hover {
 p#white {
     font-size: 2em;
     color: white;
+}
+
+p#black {
+    font-size: 2em;
+    color: black;
 }
 
 input[type=text] {

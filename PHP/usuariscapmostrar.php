@@ -12,10 +12,11 @@
 </head>
 	<body>
 		<div class="back"></div>
-		<nav>
-			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="llibresadmin.php" class="menu">Llibres</a>
-		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
+        <nav>
+			<a href="interficiecap.php" class="menu">Pagina Principal</a>
+            <a href="llibrescap.php" class="menu">Llibres</a>
+		    <a href="usuariscap.php" class="menu">Usuaris</a>
+		    <a href="bibliotecariscap.php" class="menu">Treballadors</a>
 		</nav>
         <div class="titolp">
 			<h1 id="black">USUARIS REGISTRATS</h1>
@@ -49,7 +50,7 @@
                     </h6><p class="pinicisessio">NUMERO DE CONTACTE:</p><br><br><br><h6>'.$numcontacte.'
                     </h6><p class="pinicisessio">carrer:</p><br><br><br><h6>'.$carrer.'
                     </h6>';
-                    echo '____________________________________________________________________________________________________________________';
+                    echo '<p class="pinicisessio1"> ____________________________________________________________________________________________________________________';
                 }
                 ?>
                 <div class="indexdiv3_2">
@@ -57,7 +58,7 @@
 			</div>
         </div>
         <div class="usuaricuadre">
-			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
+			<form action="http://localhost/Projecte/PHP/logoutcap.php" method="POST">
 				<p class="pinicisessio1"><?php
 				if (!isset($_SESSION["comptador"])) {
 					$_SESSION['comptador'] = 1;

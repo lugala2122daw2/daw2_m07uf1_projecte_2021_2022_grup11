@@ -8,18 +8,22 @@
 		$mida_fitxer=filesize($fitxer_llibres);	
 		$llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
 	}
-	
+
 	foreach ($llibre as $llibres) {
 		$logpwd = explode(":",$llibres);
-		if (($_POST['llibreid'] == $logpwd[0])){
-			if ("llibreid" != NULL){
-			$a = $llibres;
-			$b = file_get_contents('llibres');;
-			$c = preg_replace("/$a/", '', $b); 
+		if (($_POST['llibreidedit'] == $logpwd[0])&&($_POST['llibreid'])&&($_POST['llibretitol'])&&($_POST['isbn'])&&($_POST['genere'])){
+            $a = $llibres;
+            $llibreid = ($_POST['llibreid']);
+        	$llibretitol = ($_POST['llibretitol']);
+        	$isbn = ($_POST['isbn']);
+        	$genere = ($_POST['genere']);
+        	$texte="$llibreid:$llibretitol:$isbn:$genere\n";
+			$b = file_get_contents('llibres');
+			$c = preg_replace("/$a/", "$texte", $b); 
 			file_put_contents($fitxer_llibres, $c);
+			fclose($fp);
 		}
-		}
-	}	
+	}
 ?>
 <html>
 <head>
@@ -32,22 +36,32 @@
 	<body>
 		<div class="back"></div>
 		<nav>
-			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
-            <a href="llibresadmin.php" class="menu">Llibres</a>
-		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
+			<a href="interficiecap.php" class="menu">Pagina Principal</a>
+            <a href="llibrescap.php" class="menu">Llibres</a>
+		    <a href="usuariscap.php" class="menu">Usuaris</a>
+            <a href="bibliotecariscap.php" class="menu">Treballadors</a>
 		</nav>
         <div class="titolp">
-			<h1 id="black">BORRAR LLIBRES</h1>
+			<h1 id="black">EDITAR LLIBRES</h1>
         </div>
         <div class="indexdivproductes">
             <form action="" method="POST">
-            <br><p id="white" class="pinicisessio">ID LLIBRE A BORRAR</p>
-                <input type="text" class="num" name="llibreid" placeholder="ID NUMERIC"><br><br>
-                <input type="submit" class="comanda" value="BORRAR"><br><br><br>
+            <br><p id="white" class="pinicisessio">ID LLIBRE A EDITAR</p>
+                <input type="text" class="num" name="llibreidedit" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">ID LLIBRE</p>
+                <input type="text" class="num" name="llibreid" placeholder="ID NUMERIC"><br>
+                <p id="white" class="pinicisessio">TITOL LLIBRE</p>
+                <input type="text" name="llibretitol" placeholder="TITOL DEL LLIBRE"><br>
+                <p id="white" class="pinicisessio">ISBN</p>
+                <input type="text" class="num" name="isbn" placeholder="ISBN"><br>
+                <p id="white" class="pinicisessio">GENERE</p>
+                <input type="text" class="num" name="genere" placeholder="GENERE"><br>
+                <br><br>
+                <input type="submit" class="comanda" value="EDITAR"><br><br><br>
             </form>
         </div>
         <div class="usuaricuadre">
-			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
+			<form action="http://localhost/Projecte/PHP/logoutcap.php" method="POST">
 				<p class="pinicisessio1"><?php
 				if (!isset($_SESSION["comptador"])) {
 					$_SESSION['comptador'] = 1;

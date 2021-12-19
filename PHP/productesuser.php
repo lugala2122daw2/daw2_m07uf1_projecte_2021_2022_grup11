@@ -24,9 +24,6 @@
 			<a href="interficieuser.php" class="menu">Pagina Principal</a>
             <a href="prestecsuser.php" class="menu">Prestecs</a>
 		</nav>
-        <div class="titolp">
-			<h1 id="white">LLIBRES</h1>
-        </div>
         <div class="indexdivproductes">
         <?php
                $fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
@@ -38,7 +35,7 @@
             ?>
             
             <div class="titolp">
-			<h1 id="white">LLIBRES DISPONIBLES</h1>
+			<h1 id="black">LLIBRES DISPONIBLES</h1>
         </div>
         <div class="indexdivproductes">
             <?php
@@ -63,7 +60,7 @@
                     </h6><p class="pinicisessio1">ISBN:</p><br><br><br><h6>'.$isbn.'
                     </h6><p class="pinicisessio1">GENERE:</p><br><br><br><h6>'.$genere.'
                     </h6>';
-                    echo '____________________________________________________________________________________________________________________';
+                    echo '<p class="pinicisessio1">____________________________________________________________________________________________________________________';
                 }
                 ?>
         </div>
@@ -92,7 +89,7 @@
 			</form>
         </div>
         <div class="usuaricuadreprestec">
-            <p class="pinicisessio">PRODUCTES DEMANATS:</p>
+            <p class="pinicisessio">LLIBRES DEMANATS:</p>
             <?php
                 $fitxer_prestec="/var/www/html/Projecte/PHP/prestec";
                 $fc=fopen($fitxer_prestec,"r") or die ("No s'han pogut llegir els prestecs");

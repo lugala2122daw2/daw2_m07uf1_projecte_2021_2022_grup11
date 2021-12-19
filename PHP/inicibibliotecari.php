@@ -34,10 +34,9 @@
 	  <nav>
         <a href="llibresadmin.php" class="menu">Llibres</a>
 		<a href="usuarisadmin.php" class="menu">Usuaris</a>
-		<a href="" class="menu">Treballadors</a>
 	</nav>
 	  <div class="titol">
-		<h1 id="h1index">Potter's Library</h1>
+		<h1>Potter's Library</h1>
 	</div>
 	<div class="indexdiv1">
 			<div class="indexdiv1_1"></div>
@@ -45,6 +44,7 @@
 			<div class="indexdiv1_3"></div>
 			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>Llibres</h3><a></div>
 			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>Usuaris</h3><a></div>
+			<div class="indexdiv2_3"><a class="h3"><h3>Construyendo...</h3><a></div>
 		</div>
 		<div class="indexdiv3">
 		<div class="indexdiv3_1">
@@ -75,7 +75,7 @@
 				</div>
 	<div class="usuaricuadre">
 		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-			<p class="pinicisessio">
+			<p class="pinicisessio1">
 	<?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;

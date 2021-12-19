@@ -26,4 +26,4 @@
         header("Status: 301 Moved Permanently");
 		header("Location: ../INICIUSER.html");
         exit;
-        ?>
+?>

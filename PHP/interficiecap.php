@@ -13,10 +13,10 @@
 	<body>
 	  <div class="back"></div>
 	  <nav>
-        <a href="llibresadmin.php" class="menu">Llibres</a>
-		<a href="usuarisadmin.php" class="menu">Usuaris</a>
-		<a href="" class="menu">Treballadors</a>
-	</nav>
+            <a href="llibresadmin.php" class="menu">Llibres</a>
+		    <a href="usuariscap.php" class="menu">Usuaris</a>
+		    <a href="bibliotecariscap.php" class="menu">Treballadors</a>
+		</nav>
 	  <div class="titol">
 		<h1 id="h1index">POTTER'S LIBRARY</h1>
 	</div>
@@ -25,12 +25,12 @@
 			<div class="indexdiv1_2"></div>
 			<div class="indexdiv1_3"></div>
 			<div class="indexdiv2_1"><a href="llibresadmin.php" class="h3"><h3>LLIBRES</h3><a></div>
-			<div class="indexdiv2_2"><a href="usuarisadmin.php" class="h3"><h3>USUARIS</h3><a></div>
+			<div class="indexdiv2_2"><a href="usuariscap.php" class="h3"><h3>USUARIS</h3><a></div>
 			<div class="indexdiv2_3"><a class="h3"><h3>BIBLIOTECARIS</h3><a></div>
 		</div>
 	<div class="usuaricuadre">
 		<form action="http://localhost/Projecte/PHP/logoutcap.php" method="POST">
-			<p class="pinicisessio"><?php
+			<p class="pinicisessio1"><?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;
 				 echo "Benvingut " .session_name()."<br>";

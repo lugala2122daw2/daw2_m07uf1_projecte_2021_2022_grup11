@@ -29,7 +29,7 @@
 		</div>
 	<div class="usuaricuadre">
 		<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-			<p class="pinicisessio"><?php
+			<p class="pinicisessio1"><?php
 			if (!isset($_SESSION["comptador"])) {
 				 $_SESSION['comptador'] = 1;
 				 echo "Benvingut " .session_name()."<br>";

@@ -1,6 +1,14 @@
 <?php
     session_start();
     echo "Nombre de usuario: " . $_SESSION["usuario"];
+    if(($_POST['texto'])){
+        $filename="/var/www/html/Projecte/PHP/prestec";
+        $fitxer=fopen($filename,"a+") or die ("No s'ha pogut fer el registre de la comanda");
+        $textocomanda = ($_POST['texto']);
+        $textocomandaescribir="$textocomanda\n";
+        fwrite($fitxer,$textocomandaescribir);
+        fclose($fitxer);
+    }
 ?>
 
 <html>
@@ -12,50 +20,41 @@
 </head>
 	<body>
 		<div class="back"></div>
-        <nav>
+		<nav>
 			<a href="interficiecap.php" class="menu">Pagina Principal</a>
             <a href="llibrescap.php" class="menu">Llibres</a>
 		    <a href="usuariscap.php" class="menu">Usuaris</a>
-		    <a href="bibliotecariscap.php" class="menu">Treballadors</a>
+            <a href="bibliotecariscap.php" class="menu">Treballadors</a>
 		</nav>
         <div class="titolp">
-			<h1 id="black">TREBALLADORS REGISTRATS</h1>
+			<h1 id="black">LLIBRES DISPONIBLES</h1>
         </div>
         <div class="indexdivproductes">
             <?php
-                $fitxer_usuaris="/var/www/html/Projecte/PHP/usuarisadmin";
-                $fp=fopen($fitxer_usuaris,"r") or die ("No s'ha pogut llegir els usuaris");
-                if ($fp) {
-                    $mida_fitxer=filesize($fitxer_usuaris);	
-                    $usuaris = explode(PHP_EOL, fread($fp,$mida_fitxer));
-                }
+               $fitxer_llibres="/var/www/html/Projecte/PHP/llibres";
+               $fp=fopen($fitxer_llibres,"r+") or die ("No s'ha pogut validar l'usuari");
+               if ($fp) {
+                   $mida_fitxer=filesize($fitxer_llibres);	
+                   $llibre = explode(PHP_EOL, fread($fp,$mida_fitxer));
+               }
             ?>
             
             <?php 
-                foreach ($usuaris as $usuari) {
-                    $dadesusuari = explode(":",$usuari);
-                    $nomusuari = $dadesusuari[0];
-                    $contrasenyausuari = $dadesusuari[1];
-                    $nomcomplet = $dadesusuari[2];
-                    $codipostal = $dadesusuari[3];
-                    $email = $dadesusuari[4];
-                    $numcontacte = $dadesusuari[5];
-                    $carrer = $dadesusuari[6];
-
-                    echo '<br><p class="pinicisessio">NOM USUARI:</p><br><br><br><h6>'.$nomusuari.'
-                    </h6><p class="pinicisessio">CONTRASENYA:</p><br><br><br><h6>'.$contrasenyausuari.'
-                    </h6><p class="pinicisessio">NOM COMPLET:</p><br><br><br><h6>'.$nomcomplet.'
-                    </h6><p class="pinicisessio">CODI POSTAL:</p><br><br><br><h6>'.$codipostal.'
-                    </h6><p class="pinicisessio">E-MAIL:</p><br><br><br><h6>'.$email.'
-                    </h6><p class="pinicisessio">NUMERO DE CONTACTE:</p><br><br><br><h6>'.$numcontacte.'
-                    </h6><p class="pinicisessio">carrer:</p><br><br><br><h6>'.$carrer.'
+                foreach ($llibre as $llibres){
+                    $dadesllibre = explode(":",$llibres);
+                    $llibreid = $dadesllibre[0];
+                    $llibretitol = $dadesllibre[1];
+                    $isbn = $dadesllibre[2];
+                    $genere = $dadesllibre[3];
+                    $texte="$llibreid:$llibretitol:$isbn:$genere\n";
+                    echo '<br><p class="pinicisessio">ID LLIBRE:</p><br><br><br><h6>'.$llibreid.'
+                    </h6><p class="pinicisessio">TITOL LLIBRE:</p><br><br><br><h6>'.$llibretitol.'
+                    </h6><p class="pinicisessio">ISBN:</p><br><br><br><h6>'.$isbn.'
+                    </h6><p class="pinicisessio">GENERE:</p><br><br><br><h6>'.$genere.'
                     </h6>';
                     echo '<p class="pinicisessio">____________________________________________________________________________________________________________________';
                 }
                 ?>
-                <div class="indexdiv3_2">
-			
-			</div>
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutcap.php" method="POST">

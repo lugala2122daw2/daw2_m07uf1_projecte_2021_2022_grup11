@@ -12,9 +12,8 @@
 	<body>
 		<div class="back"></div>
 		<nav>
-			<a href="productesuser.php" class="menu">Productes</a>
+			<a href="productesuser.php" class="menu">Llibres</a>
 			<a href="prestecsuser.php" class="menu">Prestecs</a>
-			<a href="dadesuser.php" class="menu">Dades</a>
 		</nav>
 		<div class="titol">
 			<h1 id="h1index">POTTER'S LIBRARY</h1>
@@ -51,7 +50,7 @@
 			</form>
 		</div>
 		<div class="usuaricuadreprestec">
-            <p class="pinicisessio">PRODUCTES DEMANATS:</p>
+            <p class="pinicisessio">LLIBRES DEMANATS:</p>
             <?php
                 $fitxer_prestec="/var/www/html/Projecte/PHP/prestec";
                 $fc=fopen($fitxer_prestec,"r") or die ("No s'ha pogut llegir els prestecs");

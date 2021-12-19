@@ -12,11 +12,13 @@
 	foreach ($usuari as $user) {
 		$logpwd = explode(":",$user);
 		if (($_POST['proid'] == $logpwd[0])){
+			if ("proid" != NULL){
 			$a = $user;
 			$b = file_get_contents('usuaris');;
 			$c = preg_replace("/$a/", '', $b); 
 			file_put_contents($fitxer_usuaris, $c);
 		}
+	}
 	}
 ?>
 <html>
@@ -32,10 +34,9 @@
 			<a href="interficieadmin.php" class="menu">Pagina Principal</a>
             <a href="llibresadmin.php" class="menu">Llibres</a>
 		    <a href="usuarisadmin.php" class="menu">Usuaris</a>
-		    <a href="" class="menu">Prestecs</a>
 		</nav>
         <div class="titolp">
-			<h1 id="white">BORRAR USUARIS</h1>
+			<h1 id="black">BORRAR USUARIS</h1>
         </div>
         <div class="indexdivproductes">
             <form action="" method="POST">
@@ -46,7 +47,7 @@
         </div>
         <div class="usuaricuadre">
 			<form action="http://localhost/Projecte/PHP/logoutadmin.php" method="POST">
-				<p class="pinicisessio"><?php
+				<p class="pinicisessio1"><?php
 				if (!isset($_SESSION["comptador"])) {
 					$_SESSION['comptador'] = 1;
 					echo "Benvingut " . $_SESSION["usuario"]."<br>";

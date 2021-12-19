@@ -3,15 +3,15 @@
     echo "Nombre de usuario: " . $_SESSION["usuario"];
 
     $fitxer_prestec="/var/www/html/Projecte/PHP/prestec";
-    $fpc=fopen($fitxer_prestec,"r+") or die ("No s'ha pogut validar el prestec");
+    $fpc=fopen($fitxer_prestec,"r+") or die ("No s'han pogut validar els prestecs");
     if ($fpc) {
         $mida_fitxerc=filesize($fitxer_prestec);	
         $producteprestec = explode(PHP_EOL, fread($fpc,$mida_fitxerc));
     }
 
-    foreach ($producteprestec as $productc) {
-        if (($_POST['llibreid']) == $productc){
-            $a = $productc;
+    foreach ($producteprestec as $productp) {
+        if (($_POST['proid']) == $productp){
+            $a = $productp;
             $b = file_get_contents('prestec');
             $c = preg_replace("/$a/", '', $b);
             file_put_contents($fitxer_prestec, $c);
@@ -24,23 +24,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieuser.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
 		<div class="back"></div>
 		<nav>
 			<a href="interficieuser.php" class="menu">Pagina Principal</a>
-            <a href="productesuser.php" class="menu">Productes</a>
-            <a href="dadesuser.php" class="menu">Dades</a>
+            <a href="productesuser.php" class="menu">Llibres</a>
 		</nav>
         <div class="titol">
-            <h1>PRESTECS</h1>
+            <h1>Prestecs</h1>
         </div>
         <div class="indexdivproductes">
 
             <?php
                 $fitxer_prestec="/var/www/html/Projecte/PHP/prestec";
-                $fp=fopen($fitxer_prestec,"r") or die ("No s'ha pogut llegir els prestecs");
+                $fp=fopen($fitxer_prestec,"r") or die ("No s'han pogut llegir els prestecs");
                 if ($fp) {
                     $mida_fitxer=filesize($fitxer_prestec);	
                     $prestecs = explode(PHP_EOL, fread($fp,$mida_fitxer));
@@ -54,10 +54,10 @@
                     $productepreu = $dadesproducte[2];
                     $productetipus = $dadesproducte[3];
                     $botoborrarprestec = '<form action="http://localhost/Projecte/PHP/prestecsuser.php" method="POST">
-                                                <input type="text" id="noV" name="llibreid" value="'.$producte.'">
-                                             <input class="prestec" type="submit" value="BORRAR PRODUCTE">
+                                                <input type="text" id="noV" name="proid" value="'.$producte.'">
+                                             <input class="prestec" type="submit" value="BORRAR LLIBRE">
                                          </form>';
-                    echo '<br><br><br><h2>'.$productenom.'</h2><br><p>'.$productepreu.'</p><br><h6><a href="productesuserbasketball.php" class="tipusproducte">'.$productetipus.'</a></h6><br>'.$botoborrarprestec.''; 
+                    echo '<br><br><br><h2>'.$productenom.'</h2><br><p>'.$productepreu.'</p><br><h6><a href="" class="tipusproducte">'.$productetipus.'</a></h6><br>'.$botoborrarprestec.''; 
                     
                 }
             ?>

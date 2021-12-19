@@ -34,7 +34,7 @@
 	<body>
       <div class="back"></div>
       <div class="titol">
-		<p class="pinicisessio">LA SESSIÓ DE L'USUARI <?php echo "".session_name()."";?> HA ESTAT FINALITZADA</p>
+		<p class="pinicisessio1">LA SESSIÓ DE L'USUARI <?php echo "".session_name()."";?> HA ESTAT FINALITZADA</p>
 		<a href="../INICI.php" class="botoproser">TORNAR A L'INICI</a>
 	  </div>
     </body>
