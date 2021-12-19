@@ -10,7 +10,7 @@
     }
 
     foreach ($producteprestec as $productc) {
-        if (($_POST['proid']) == $productc){
+        if (($_POST['llibreid']) == $productc){
             $a = $productc;
             $b = file_get_contents('prestec');
             $c = preg_replace("/$a/", '', $b);
@@ -24,7 +24,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <FONT FACE="">
         <link href="../CSS/estilsinterficieuser.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="IMATGES/favicon.png" />
         <TITLE>Projecte M07 - UF1</TITLE>
 </head>
 	<body>
@@ -55,7 +54,7 @@
                     $productepreu = $dadesproducte[2];
                     $productetipus = $dadesproducte[3];
                     $botoborrarprestec = '<form action="http://localhost/Projecte/PHP/prestecsuser.php" method="POST">
-                                                <input type="text" id="noV" name="proid" value="'.$producte.'">
+                                                <input type="text" id="noV" name="llibreid" value="'.$producte.'">
                                              <input class="prestec" type="submit" value="BORRAR PRODUCTE">
                                          </form>';
                     echo '<br><br><br><h2>'.$productenom.'</h2><br><p>'.$productepreu.'</p><br><h6><a href="productesuserbasketball.php" class="tipusproducte">'.$productetipus.'</a></h6><br>'.$botoborrarprestec.''; 
